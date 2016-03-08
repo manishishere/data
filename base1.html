@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html ng-app="mymodel">
+<head>
+      <script src="../angular.js"></script>
+</head>
+<body>
+	<form name="myform" ng-app="">
+        <div ng-controller="mycontroller">
+        m:	{{	m.age  }}
+        <input type="email" name="address" ng-model="m.name" style="border-color:{{ m.name }}" >
+        <span ng-show="myform.address.$error.email">not </span>
+        <br>
+        give data: <div style="color:{{ m.name }}">{{ m.name }}</div>
+        </div>
+
+        <p>valid</p>
+        <script type="text/javascript">
+        var myapp= angular.module("mymodel",[]);
+        myapp.controller("mycontroller",function($scope){
+        	$scope.m={
+        		name:"green",
+        		age:20,
+        	};
+
+        });
+        </script>
+    </form>
+</body>
+</html>
